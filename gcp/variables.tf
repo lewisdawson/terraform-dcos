@@ -57,9 +57,21 @@ variable "gcp_agent_instance_type" {
  description = "Default Private Agent instance size for GCP."
 }
 
+variable "gcp_agent_instance_scopes" {
+ type = "list"
+ default = ["https://www.googleapis.com/auth/compute.readonly"]
+ description = "Default Private Agent instance service account scopes."
+}
+
 variable "gcp_public_agent_instance_type" {
  default = "n1-standard-4"
  description = "Default Public Agent instance size for GCP."
+}
+
+variable "gcp_public_agent_instance_scopes" {
+ type = "list"
+ default = ["https://www.googleapis.com/auth/compute.readonly"]
+ description = "Default Public Agent instance service account scopes."
 }
 
 variable "gcp_bootstrap_instance_type" {
